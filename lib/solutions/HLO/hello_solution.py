@@ -2,5 +2,14 @@
 class HelloSolution:
     
     # friend_name = unicode string
+    # say hello to the world
     def hello(self, friend_name):
-        raise NotImplementedError()
+        if not isinstance(friend_name, str):
+            raise TypeError("input should be string")
+        
+        hello = f"Hello {friend_name}!"
+
+        return hello
+
+        
+
