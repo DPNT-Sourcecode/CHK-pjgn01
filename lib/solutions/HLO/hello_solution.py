@@ -7,10 +7,11 @@ class HelloSolution:
         if not isinstance(friend_name, str):
             raise TypeError("input should be string")
         
-        hello = f"Hello, World!"
+        hello = f"Hello, {friend_name}!"
 
         return hello
 
         
+
 
 
