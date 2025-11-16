@@ -17,14 +17,13 @@ offers = { # items, discount
 class CheckoutSolution:
 
     def checkout(self, skus):
-        if len(skus) == 0:
+        if not isinstance(skus, str):
             return -1
         
         total = 0
         item_tally = defaultdict(int)
         
         for item in skus:
-            item = item.strip()
             if item == "":
                 continue
             if item not in price_table:

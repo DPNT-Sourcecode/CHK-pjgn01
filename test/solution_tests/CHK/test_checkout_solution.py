@@ -2,34 +2,31 @@ from solutions.CHK.checkout_solution import CheckoutSolution
 
 class TestCheckout():
     def test_empty_basket(self):
-        assert CheckoutSolution().checkout([]) == -1
+        assert CheckoutSolution().checkout("") == 0
+
+    def test_empty_basket2(self):
+        assert CheckoutSolution().checkout("") == 0
 
     def test_invalid_item(self):
-        assert CheckoutSolution().checkout(['Z']) == -1
-
-    def test_no_items1(self):
-        assert CheckoutSolution().checkout([""]) == 0
-    
-    def test_no_items2(self):
-        assert CheckoutSolution().checkout([' ']) == 0
+        assert CheckoutSolution().checkout('Z') == -1
 
     def test_one_of_each(self):
-        basket = ['A', 'B', 'C', 'D']
+        basket = ['ABCD']
         assert CheckoutSolution().checkout(basket) == 115
 
     def test_A_offer_once(self):
-        basket = ['A', 'A', 'A', 'A']
+        basket = ['AAAA']
         # 3A for 130 + 50
         assert CheckoutSolution().checkout(basket) == 180
 
     def test_B_offer_twice(self):
-        basket = ['B', 'B', 'B', 'B']
+        basket = ['BBB']
         # (2B for 45) * 2
         assert CheckoutSolution().checkout(basket) == 90
 
     def test_3_of_everything(self):
-        basket = ['A', 'A', 'A'] # 3A for 130
-        basket.extend(['B', 'B', 'B']) # 2B for 45+30 = 75
-        basket.extend(['C', 'C', 'C']) # 20 * 3 = 60
-        basket.extend(['D', 'D', 'D']) # 15 * 3 = 45
+        basket = ['AAA'] # 3A for 130
+        basket.extend(['BBB']) # 2B for 45+30 = 75
+        basket.extend(['CCC']) # 20 * 3 = 60
+        basket.extend(['DDD']) # 15 * 3 = 45
         assert CheckoutSolution().checkout(basket) == 310
