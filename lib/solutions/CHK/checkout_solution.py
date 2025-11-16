@@ -28,10 +28,11 @@ class CheckoutSolution:
             if len(item_tally) < 3:
                 continue
 
-            eligible_items_set = set(eligible_items)
-            basket_items_set = set(item_tally.keys())
-
-            possible_bundle = len(eligible_items_set & basket_items_set) != 0
+            eligible_basket_items = 0
+            for item in eligible_items:
+                eligible_basket_items += item_tally[item]
+            
+            possible_bundle = len(eligible_basket_items) >= 3
             print("Hello", possible_bundle)
 
             while possible_bundle: 
@@ -48,8 +49,10 @@ class CheckoutSolution:
                             item_tally[bundle_item] -= 1
                         bundle_items = ""
 
-                basket_items_set = set(item_tally.keys())
-                possible_bundle = len(eligible_items_set & basket_items_set) != 0
+                eligible_basket_items = 0
+                for item in eligible_items:
+                    eligible_basket_items += item_tally[item]
+                possible_bundle = len(eligible_basket_items) >= 3
 
         # apply freebie offers
         for item in freebies:
@@ -82,6 +85,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
