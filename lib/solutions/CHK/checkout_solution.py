@@ -28,6 +28,7 @@ class CheckoutSolution:
             if len(skus) < 3:
                 continue
 
+            eligible_items = sorted(eligible_items, lambda x: price_table[x], reverse=True)
             eligible_basket_items = 0
             for item in eligible_items:
                 eligible_basket_items += item_tally[item]
@@ -80,6 +81,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
