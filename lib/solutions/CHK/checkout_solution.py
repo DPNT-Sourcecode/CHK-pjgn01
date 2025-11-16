@@ -8,9 +8,13 @@ price_table = {
     'D': 15,
 }
 
-discounts = { # items, discount
+discounts = { # num of items, discount
     'A': { 3: 20, 5: 50},
     'B': { 2: 15},
+}
+
+freebies = {  # num of items, free item
+    'E': { 2: 'B'}
 }
 
 # A supermarket checkout that calculates the total price of a number of items
@@ -38,11 +42,12 @@ class CheckoutSolution:
         # apply any offers
         for item, item_count in item_tally.items():
             if item in discounts:
+                
                 offer_min, discount = discounts[item]
 
                 while item_count >= offer_min:
                     total -= discount
                     item_count -= offer_min
         
+    
         return total
-
