@@ -23,8 +23,9 @@ class CheckoutSolution:
         total = 0
         item_tally = defaultdict(int)
         
-        for item.strip() in skus:
-            if item == "" or item.isspace():
+        for item in skus:
+            item = item.strip()
+            if item == "":
                 continue
             if item not in price_table:
                 return -1

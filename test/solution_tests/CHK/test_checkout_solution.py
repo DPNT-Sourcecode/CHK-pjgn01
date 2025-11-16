@@ -7,8 +7,11 @@ class TestCheckout():
     def test_invalid_item(self):
         assert CheckoutSolution().checkout(['Z']) == -1
 
-    def test_no_items(self):
+    def test_no_items1(self):
         assert CheckoutSolution().checkout([""]) == 0
+    
+    def test_no_items2(self):
+        assert CheckoutSolution().checkout([' ']) == 0
 
     def test_one_of_each(self):
         basket = ['A', 'B', 'C', 'D']
