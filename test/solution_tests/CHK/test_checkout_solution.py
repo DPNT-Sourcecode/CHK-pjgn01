@@ -74,7 +74,7 @@ class TestCheckout():
         for item, price in price_table.items():
             assert CheckoutSolution().checkout(item) == price
 
-    def test_offers(self):
+    def test_discount_offers(self):
         test_cases = [
             # 5H for 45, 10H for 80
             ["HHHHH", 45],
@@ -106,6 +106,14 @@ class TestCheckout():
             ["VVVV", 180], 
             ["VVVVV", 220], 
             ["VVVVVV", 260], 
+        ]
+
+        for basket, expected in test_cases:
+            assert CheckoutSolution().checkout(basket) == expected
+
+    def test_bundle_offers(self):
+        test_cases = [
+            ["STX", 45],
         ]
 
         for basket, expected in test_cases:

@@ -26,10 +26,13 @@ class CheckoutSolution:
             return total
         
         # apply group discount offers first
-        for bundle_offer in three_for_n_bundles:
+        for (eligible_items, offer_price) in three_for_n_bundles:
+            if len(item_tally) < 3:
+                continue
+
             bundle_count = 0
             bundle_items = ""
-            eligible_items, offer_price = bundle_offer
+
             for item in eligible_items:
                 if item in item_tally:
                     bundle_count += 1
@@ -38,7 +41,10 @@ class CheckoutSolution:
                 if bundle_count == 3:
                     total += offer_price
 
-                    for bundle_items in 
+                    for bundle_item in bundle_items:
+                        item_tally[bundle_item] -= 1
+                    
+                    bundle_count = 0
 
 
 
