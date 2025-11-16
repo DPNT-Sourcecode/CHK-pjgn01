@@ -10,3 +10,7 @@ class TestCheckout():
     def test_one_of_each(self):
         basket = ['A', 'B', 'C', 'D']
         assert CheckoutSolution().checkout(basket) == 115
+
+    def test_A_offer(self):
+        basket = ['A', 'A', 'A', 'A']
+        assert CheckoutSolution().checkout(basket) == 180
