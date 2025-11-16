@@ -50,9 +50,10 @@ class CheckoutSolution:
                         total -= discount
                         item_count -= offer_min
 
-            # if item in freebies:
-            #     freebie_offer
+            if item in freebies:
+                freebie_offer
         
     
         return total
+
 
