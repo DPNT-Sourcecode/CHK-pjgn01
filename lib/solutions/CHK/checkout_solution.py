@@ -28,6 +28,9 @@ class CheckoutSolution:
             if len(item_tally) < 3:
                 continue
 
+            eligible_items_set = set(eligible_items)
+            basket_items_set = set(item_tally.keys())
+
             bundle_items = ""
             for item in eligible_items:
                 if item in item_tally and item_tally[item] > 0:
@@ -74,4 +77,5 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
