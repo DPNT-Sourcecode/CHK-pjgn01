@@ -14,6 +14,13 @@ class CheckoutSolution:
         
         total = 0
         item_tally = defaultdict(int)
+
+        for item in skus:
+            if item not in price_table:
+                return -1
+            
+            total += price_table[item]
+            item_tally[item] +=1
         
         # apply group discount offers first
         for (eligible_items, offer_price) in three_for_n_bundles:
@@ -35,18 +42,14 @@ class CheckoutSolution:
                     print(total)
 
                     for bundle_item in bundle_items:
+                        total -= price_table[bundle_item]
                         item_tally[bundle_item] -= 1
                     bundle_items = ""   
                 print(item_tally)
                 print(bundle_items)
                        
 
-        for item in skus:
-            if item not in price_table:
-                return -1
-            
-            total += price_table[item]
-            item_tally[item] +=1
+   
 
         # apply freebie offers
         for item in freebies:
