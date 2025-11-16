@@ -29,7 +29,7 @@ class CheckoutSolution:
         for (eligible_items, offer_price) in three_for_n_bundles:
             if len(item_tally) < 3:
                 continue
-
+            print(item_tally)
             bundle_items = ""
 
             for item in eligible_items:
@@ -42,7 +42,10 @@ class CheckoutSolution:
 
                     for bundle_item in bundle_items:
                         item_tally[bundle_item] -= 1
-            print(item_tally)        
+                    bundle_items = ""   
+                       
+
+
 
         # apply freebie offers
         for item in freebies:
@@ -75,6 +78,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
