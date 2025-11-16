@@ -6,6 +6,10 @@ price_table = {
     'D': 15,
 }
 
+offers = {
+    'A': 
+}
+
 # A supermarket checkout that calculates the total price of a number of items
 class CheckoutSolution:
 
