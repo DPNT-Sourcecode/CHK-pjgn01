@@ -7,6 +7,9 @@ class TestCheckout():
     def test_invalid_item(self):
         assert CheckoutSolution().checkout(['Z']) == -1
 
+    def test_no_items(self):
+        assert CheckoutSolution().checkout([""]) == 0
+
     def test_one_of_each(self):
         basket = ['A', 'B', 'C', 'D']
         assert CheckoutSolution().checkout(basket) == 115
@@ -27,3 +30,4 @@ class TestCheckout():
         basket.extend(['C', 'C', 'C']) # 20 * 3 = 60
         basket.extend(['D', 'D', 'D']) # 15 * 3 = 45
         assert CheckoutSolution().checkout(basket) == 310
+
