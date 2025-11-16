@@ -37,8 +37,8 @@ class TestCheckout():
         basket = basket + 'BBB' # 2B for 45+30 = 75
         basket = basket + 'CCC' # 20 * 3 = 60
         basket = basket + 'DDD' # 15 * 3 = 45
-        basket = basket + 'EEE' # 40 * 3 = 120
-        assert CheckoutSolution().checkout(basket) == 430
+        basket = basket + 'EEE' # 40 * 3 = 120, plus get one B free so -30
+        assert CheckoutSolution().checkout(basket) == 400
 
     def test_free_items(self):
         basket = 'EEEEBB'

@@ -42,17 +42,19 @@ class CheckoutSolution:
         
         # apply any offers
         # apply freebies first
-        for item, offers_for_item in freebies:
+        for item in freebies:
             if item not in item_tally:
                 continue
 
-            offers_for_item = sorted(offers_for_item.items(), key=lambda x: x[0], reverse=True)
+            offers_for_item = sorted(freebies[item].items(), key=lambda x: x[0], reverse=True)
+            item_count = item_tally[item]
 
             for offer_min, free_items in offers_for_item:
                 while item_count >= offer_min:
                     for free_item in free_items:
                         if free_item in skus:
                             total -= price_table[free_item]
+                            item_tally[free_item] -= 1
                         else:
                             skus = skus + free_items
                     item_count -= offer_min
@@ -68,3 +70,4 @@ class CheckoutSolution:
                         item_count -= offer_min
     
         return total
+
