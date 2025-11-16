@@ -15,10 +15,10 @@ price_table = {
     'K': 80,
     'L': 90,
     'M': 15,
-    'N': 40
+    'N': 40,
     'O': 10,
     'P': 50,
-    'Q': 30
+    'Q': 30,
     'R': 50,
     'S': 30,
     'T': 20,
@@ -33,6 +33,9 @@ price_table = {
 discounts = { # num of items, discount
     'A': { 3: 20, 5: 50},
     'B': { 2: 15},
+    'H': { 5: 5, 10: 20},
+    'K': { 2: 10},
+    
 }
 
 freebies = {  # num of items, free item
@@ -93,3 +96,4 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
