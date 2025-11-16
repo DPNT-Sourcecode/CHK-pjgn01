@@ -51,3 +51,6 @@ class TestCheckout():
     def test_free_items3(self):
         basket = 'ABCDEABCDE'
         assert CheckoutSolution().checkout(basket) == 280
+
+    def test_server_test_cases(self):
+        

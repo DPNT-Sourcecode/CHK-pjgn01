@@ -7,6 +7,7 @@ price_table = {
     'C': 20,
     'D': 15,
     'E': 40,
+    'F': 10,
 }
 
 discounts = { # num of items, discount
@@ -15,7 +16,8 @@ discounts = { # num of items, discount
 }
 
 freebies = {  # num of items, free item
-    'E': { 2: 'B'}
+    'E': { 2: 'B'},
+    'F': { 3: 'F'} 
 }
 
 # A supermarket checkout that calculates the total price of a number of items
@@ -69,5 +71,5 @@ class CheckoutSolution:
                         total -= discount
                         item_count -= offer_min
     
-    
+
         return total
