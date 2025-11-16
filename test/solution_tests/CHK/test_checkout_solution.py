@@ -114,8 +114,12 @@ class TestCheckout():
     def test_bundle_offers(self):
         test_cases = [
             ["STX", 45],
+            ["STY", 45],
+            ["STZ", 45],
+            ["XYZ", 45],
         ]
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
 
