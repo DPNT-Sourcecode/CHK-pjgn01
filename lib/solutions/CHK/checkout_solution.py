@@ -42,8 +42,10 @@ class CheckoutSolution:
         # apply any offers
         for item, item_count in item_tally.items():
             if item in discounts:
-                
-                offer_min, discount = discounts[item]
+                offers = sorted(discounts[item].items(), key=lambda x: x[0])
+
+
+                offer_min, discount = offers
 
                 while item_count >= offer_min:
                     total -= discount
