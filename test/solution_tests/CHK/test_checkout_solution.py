@@ -88,7 +88,7 @@ class TestCheckout():
             ["NMNN", 120], 
             ["NMNMN", 135], 
 
-            ["KK", 150], # 2K for 150 
+            ["KK", 120], # 2K for 120   
             ["PPPPP", 200], # 5P for 200
             ["QQQ", 80], # 3Q for 80 
 
@@ -110,3 +110,4 @@ class TestCheckout():
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+

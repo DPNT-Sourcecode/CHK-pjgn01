@@ -25,7 +25,10 @@ class CheckoutSolution:
         if len(discounts) == 0:
             return total
         
-        # apply freebie offers first
+        # apply group discount offers first
+        for bundle_offer in three
+
+        # apply freebie offers
         for item in freebies:
             if item not in item_tally:
                 continue
