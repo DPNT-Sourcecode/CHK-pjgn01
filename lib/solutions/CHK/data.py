@@ -31,7 +31,7 @@ discounts = { # num of items, discount
     'A': { 3: 20, 5: 50},
     'B': { 2: 15},
     'H': { 5: 5, 10: 20},
-    'K': { 2: 10},
+    'K': { 2: 20},
     'P': { 5: 50},
     'Q': { 3: 10},
     'V': { 2: 10, 3: 20}
@@ -44,3 +44,7 @@ freebies = {  # num of items, free item
     'R': { 3: 'Q'},
     'U': { 4: 'U'},
 }
+
+three_for_n_bundles = [
+    ("STXYZ", 45)
+]
