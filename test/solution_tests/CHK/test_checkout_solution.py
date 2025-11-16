@@ -30,4 +30,3 @@ class TestCheckout():
         basket.extend(['C', 'C', 'C']) # 20 * 3 = 60
         basket.extend(['D', 'D', 'D']) # 15 * 3 = 45
         assert CheckoutSolution().checkout(basket) == 310
-

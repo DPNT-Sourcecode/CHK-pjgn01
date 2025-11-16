@@ -23,8 +23,8 @@ class CheckoutSolution:
         total = 0
         item_tally = defaultdict(int)
         
-        for item in skus:
-            if "" in item:
+        for item.strip() in skus:
+            if item == "" or item.isspace():
                 continue
             if item not in price_table:
                 return -1
@@ -45,6 +45,3 @@ class CheckoutSolution:
                     item_count -= offer_min
         
         return total
-
-
-
