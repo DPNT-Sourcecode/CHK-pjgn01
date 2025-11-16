@@ -43,7 +43,7 @@ discounts = { # num of items, discount
 freebies = {  # num of items, free item
     'E': { 2: 'B'},
     'F': { 3: 'F'},
-    'N': { 3, 'M'},
+    'N': { 3: 'M'},
     'R': { 3: 'Q'},
     'U': { 4: 'U'},
 }
@@ -101,5 +101,6 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
