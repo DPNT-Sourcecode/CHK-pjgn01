@@ -72,7 +72,6 @@ class CheckoutSolution:
                     total -= discount
                     item_count -= offer_min
     
-
         return total
 
 
