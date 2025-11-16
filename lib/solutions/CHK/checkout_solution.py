@@ -40,8 +40,7 @@ class CheckoutSolution:
         if len(discounts) == 0:
             return total
         
-        # apply any offers
-        # apply freebies first
+        # apply freebie offers first
         for item in freebies:
             if item not in item_tally:
                 continue
@@ -60,6 +59,7 @@ class CheckoutSolution:
                     item_count -= offer_min
 
 
+        # apply eligible discounts
         for item, item_count in item_tally.items():
             if item in discounts:
                 offers = sorted(discounts[item].items(), key=lambda x: x[0], reverse=True)
@@ -68,6 +68,7 @@ class CheckoutSolution:
                     while item_count >= offer_min:
                         total -= discount
                         item_count -= offer_min
+    
     
         return total
 
