@@ -40,3 +40,14 @@ class TestCheckout():
         basket = basket + 'EEE' # 40 * 3 = 120
         assert CheckoutSolution().checkout(basket) == 430
 
+    def test_free_items(self):
+        basket = 'EEEEBB'
+        assert CheckoutSolution().checkout(basket) == 160
+
+    def test_free_items2(self):
+        basket = 'BEBEEE'
+        assert CheckoutSolution().checkout(basket) == 160
+
+    def test_free_items3(self):
+        basket = 'ABCDEABCDE'
+        assert CheckoutSolution().checkout(basket) == 280
