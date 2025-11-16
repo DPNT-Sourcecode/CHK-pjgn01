@@ -1,4 +1,4 @@
-from solutions.CHK.checkout_solution import CheckoutSolution
+from solutions.CHK.checkout_solution import CheckoutSolution, price_table
 
 class TestCheckout():
     def test_empty_basket(self):
@@ -71,38 +71,8 @@ class TestCheckout():
             assert CheckoutSolution().checkout(basket) == expected
 
     def test_prices(self):
-        test_cases = [
-            ["A", 50],
-            ["B", 30],
-            ["C", 20],
-            ["D", 15],
-            ["E", 40],
-            ["F", 10],
-            ["G", 20],
-            ["H", 10],
-            ["I", 35],
-            ["J", 60],
-            ["K", 80],
-            ["L", 90],
-            ["M", 15],
-            ["N", 40],
-            ["O", 10],
-            ["P", 50],
-            ["Q", 30],
-            ["R", 50],
-            ["S", 30],
-            ["T", 20],
-            ["U", 40],
-            ["V", 50],
-            ["W", 20],
-            ["X", 90],
-            ["Y", 10],
-            ["Z", 50],        
-        ]
-
-        for basket, expected in test_cases:
-            assert CheckoutSolution().checkout(basket) == expected
-
+        for item, price in price_table.items():
+            assert CheckoutSolution().checkout(item) == price
 
     def test_offers(self):
         test_cases = [
@@ -140,6 +110,7 @@ class TestCheckout():
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
 
 
 
