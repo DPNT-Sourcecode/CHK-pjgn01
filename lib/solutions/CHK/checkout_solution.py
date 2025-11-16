@@ -26,13 +26,13 @@ class CheckoutSolution:
     def checkout(self, skus):
         if not isinstance(skus, str):
             return -1
+        if len(skus) == 0: # basket is empty
+            return 0
         
         total = 0
         item_tally = defaultdict(int)
         
         for item in skus:
-            if item == "":
-                return total
             if item not in price_table:
                 return -1
             
@@ -73,3 +73,4 @@ class CheckoutSolution:
     
 
         return total
+
