@@ -29,8 +29,10 @@ class CheckoutSolution:
             
             item_tally[item] +=1
 
-        for item in item_tally:
+        for item, count in item_tally.items():
             total += price_table[item]
+
+        return total
 
 
 
