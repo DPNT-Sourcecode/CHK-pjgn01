@@ -8,11 +8,16 @@ class TestCheckout():
         assert CheckoutSolution().checkout('Z') == -1
 
     def test_one_of_each(self):
-        basket = 'ABCD'
-        assert CheckoutSolution().checkout(basket) == 115
+        basket = 'ABCDE'
+        assert CheckoutSolution().checkout(basket) == 155
 
-    def test_A_offer_once(self):
+    def test_A_offer_1(self):
         basket = 'AAAA'
+        # 3A for 130 + 50
+        assert CheckoutSolution().checkout(basket) == 180
+
+    def test_A_offer_2(self):
+        basket = 'AAAAA'
         # 3A for 130 + 50
         assert CheckoutSolution().checkout(basket) == 180
 

@@ -6,6 +6,7 @@ price_table = {
     'B': 30,
     'C': 20,
     'D': 15,
+    'E': 40,
 }
 
 discounts = { # num of items, discount
@@ -42,14 +43,13 @@ class CheckoutSolution:
         # apply any offers
         for item, item_count in item_tally.items():
             if item in discounts:
-                offers = sorted(discounts[item].items(), key=lambda x: x[0])
+                offers = sorted(discounts[item].items(), key=lambda x: x[0], reverse=True)
 
-
-                offer_min, discount = offers
-
-                while item_count >= offer_min:
-                    total -= discount
-                    item_count -= offer_min
+                for offer_min, discount in offers:
+                    while item_count >= offer_min:
+                        total -= discount
+                        item_count -= offer_min
         
     
         return total
+
