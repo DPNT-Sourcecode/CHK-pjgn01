@@ -12,6 +12,3 @@ class HelloSolution:
         return hello
 
         
-
-
-
