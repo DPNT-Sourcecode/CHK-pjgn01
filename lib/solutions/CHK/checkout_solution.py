@@ -60,14 +60,17 @@ class CheckoutSolution:
 
 
         # apply eligible discounts
-        for item, item_count in item_tally.items():
-            if item in discounts:
-                offers = sorted(discounts[item].items(), key=lambda x: x[0], reverse=True)
+        for item in discounts:
+            if item not in item_tally:
+                continue
 
-                for offer_min, discount in offers:
-                    while item_count >= offer_min:
-                        total -= discount
-                        item_count -= offer_min
+            offers = sorted(discounts[item].items(), key=lambda x: x[0], reverse=True)
+            item_count = item_tally[item]
+
+            for offer_min, discount in offers:
+                while item_count >= offer_min:
+                    total -= discount
+                    item_count -= offer_min
     
 
         return total
