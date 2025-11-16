@@ -91,14 +91,55 @@ class TestCheckout():
             ["CCADDEEBBA", 280],
             ["AAAAAEEBAAABB", 455],
             ["ABCDECBAABCABBAAAEEAA", 665],
+        ]
+
+        for basket, expected in test_cases:
+            assert CheckoutSolution().checkout(basket) == expected
+
+    def test_prices(self):
+        test_cases = [
+            ["A", 50],
+            ["B", 30],
+            ["C", 20],
+            ["D", 15],
+            ["E", 40],
+            ["F", 10],
+            ["G", 20],
+            ["H", 10],
+            ["I", 35],
+            ["J", 60],
+            ["K", 80],
+            ["L", 90],
+            ["M", 15],
+            ["N", 40],
+            ["O", 10],
+            ["P", 50],
+            ["Q", 30],
+            ["R", 50],
+            ["S", 30],
+            ["T", 20],
+            ["U", 40],
+            ["V", 50],
+            ["W", 20],
+            ["X", 90],
+            ["Y", 10],
+            ["Z", 50],        
+        ]
+
+        for basket, expected in test_cases:
+            assert CheckoutSolution().checkout(basket) == expected
+
+
+    def test_offers(self):
+        test_cases = [
             ["HHHHH", 45],  # 5H for 45
             ["HHHHHHHHHH", 80],  #10H for 80
-            ["KK", 150] # 2K for 150 
-            ["NMNN", 120] # 3N get one M free 
-            ["PPPPP", 200] # 5P for 200
-            ["QQQ", 80] # 3Q for 80 
-            ["RRQR", 150] # 3R get one Q free
-            ["UUUU", 120] # 3U get one U free 
+            ["KK", 150], # 2K for 150 
+            ["NMNN", 120], # 3N get one M free 
+            ["PPPPP", 200], # 5P for 200
+            ["QQQ", 80], # 3Q for 80 
+            ["RRQR", 150], # 3R get one Q free
+            ["UUUU", 120], # 3U get one U free 
             ["VV", 90], # 2V for 90
             ["VVV", 130], # 3V for 130
 
@@ -106,7 +147,3 @@ class TestCheckout():
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
-
-
-
-
