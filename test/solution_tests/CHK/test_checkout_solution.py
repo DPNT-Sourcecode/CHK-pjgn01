@@ -112,24 +112,27 @@ class TestCheckout():
             ["HHHHHHHHHH", 80], # 10H
             ["HHHHHHHHHHHH", 100], # 12H
             ["HHHHHHHHHHHHHHH", 125], # 15H
-            
-            # 2K for 150 
-            ["KK", 150], 
 
             # 3N get one M free 
             ["NNN", 120], 
             ["NMNN", 120], 
             ["NMNMN", 135], 
 
+            ["KK", 150], # 2K for 150 
             ["PPPPP", 200], # 5P for 200
             ["QQQ", 80], # 3Q for 80 
             ["RRQR", 150], # 3R get one Q free
             ["UUUU", 120], # 3U get one U free 
-            ["VV", 90], # 2V for 90
-            ["VVV", 130], # 3V for 130
 
+            # 2V for 90, 3V for 130
+            ["VV", 90], 
+            ["VVV", 130], 
+            ["VVVV", 180], 
+            ["VVVVV", 220], 
+            ["VVVVVV", 260], 
         ]
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
 
