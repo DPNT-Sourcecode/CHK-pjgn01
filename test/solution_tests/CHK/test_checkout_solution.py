@@ -11,6 +11,16 @@ class TestCheckout():
         basket = ['A', 'B', 'C', 'D']
         assert CheckoutSolution().checkout(basket) == 115
 
-    def test_A_offer(self):
+    def test_A_offer_once(self):
         basket = ['A', 'A', 'A', 'A']
+        # 3A for 130 + 50
         assert CheckoutSolution().checkout(basket) == 180
+
+    def test_B_offer_twice(self):
+        basket = ['B', 'B', 'B', 'B']
+        # (2B for 45) * 2
+        assert CheckoutSolution().checkout(basket) == 90
+
+    def test_3_of_everything(self):
+        basket = ['A', 'A', 'A']
+        basket.extend()

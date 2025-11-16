@@ -27,11 +27,10 @@ class CheckoutSolution:
             if item not in price_table:
                 return -1
             
+            total += price_table[item]
             item_tally[item] +=1
 
         for item, item_count in item_tally.items():
-            total += price_table[item]
-
             if item in offers:
                 offer_min, discount = offers[item]
 
