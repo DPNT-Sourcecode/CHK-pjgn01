@@ -1,4 +1,6 @@
 
+from collections import defaultdict
+
 price_table = {
     'A': 50,
     'B': 30,
@@ -7,7 +9,8 @@ price_table = {
 }
 
 offers = {
-    'A': 
+    'A': (3, 130),
+    'B': (2, 45),
 }
 
 # A supermarket checkout that calculates the total price of a number of items
@@ -17,10 +20,17 @@ class CheckoutSolution:
         if len(skus) == 0:
             return -1
         
+        total = 0
+        item_tally = defaultdict(int)
+        
         for item in skus:
             if item not in price_table:
                 return -1
-        
+            
+            item_tally[item] +=1
+
+        for item in item_tally:
+            total += price_table[item]
 
 
 
