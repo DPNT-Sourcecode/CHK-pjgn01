@@ -35,12 +35,17 @@ discounts = { # num of items, discount
     'B': { 2: 15},
     'H': { 5: 5, 10: 20},
     'K': { 2: 10},
-    
+    'P': { 5: 50},
+    'Q': { 3: 10},
+    'V': { 2: 10, 3: 20}
 }
 
 freebies = {  # num of items, free item
     'E': { 2: 'B'},
-    'F': { 3: 'F'} 
+    'F': { 3: 'F'},
+    'N': { 3, 'M'},
+    'R': { 3: 'Q'},
+    'U': { 4: 'U'},
 }
 
 # A supermarket checkout that calculates the total price of a number of items
@@ -96,4 +101,5 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
