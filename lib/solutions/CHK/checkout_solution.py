@@ -1,6 +1,6 @@
 
 from collections import defaultdict
-from .data import price_table, discounts, freebies
+from .data import price_table, discounts, freebies, three_for_n_bundles
 
 
 # A supermarket checkout that calculates the total price of a number of items
@@ -26,7 +26,9 @@ class CheckoutSolution:
             return total
         
         # apply group discount offers first
-        for bundle_offer in three
+        for bundle_offer in three_for_n_bundles:
+            bundle_count = 0
+            for item in bun
 
         # apply freebie offers
         for item in freebies:
@@ -59,3 +61,4 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
