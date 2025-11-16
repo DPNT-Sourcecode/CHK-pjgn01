@@ -46,10 +46,8 @@ class CheckoutSolution:
                             item_tally[bundle_item] -= 1
                         
                         bundle_items = ""
-                        eligible_basket_items = 0
+                        eligible_basket_items -= 3
 
-                for item in eligible_items:
-                    eligible_basket_items += item_tally[item]
 
         # apply freebie offers
         for item in freebies:
@@ -82,6 +80,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
