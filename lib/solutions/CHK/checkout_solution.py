@@ -25,17 +25,14 @@ class CheckoutSolution:
         
         # apply group discount offers first
         for (eligible_items, offer_price) in three_for_n_bundles:
-            if len(item_tally) < 3:
+            if len(skus) < 3:
                 continue
 
             eligible_basket_items = 0
             for item in eligible_items:
                 eligible_basket_items += item_tally[item]
             
-            possible_bundle = len(eligible_basket_items) >= 3
-            print("Hello", possible_bundle)
-
-            while possible_bundle: 
+            while eligible_basket_items >= 3: 
                 bundle_items = ""
                 for item in eligible_items:
                     if item in item_tally and item_tally[item] > 0:
@@ -47,12 +44,12 @@ class CheckoutSolution:
                         for bundle_item in bundle_items:
                             total -= price_table[bundle_item]
                             item_tally[bundle_item] -= 1
+                        
                         bundle_items = ""
+                        eligible_basket_items = 0
 
-                eligible_basket_items = 0
                 for item in eligible_items:
                     eligible_basket_items += item_tally[item]
-                possible_bundle = len(eligible_basket_items) >= 3
 
         # apply freebie offers
         for item in freebies:
@@ -85,6 +82,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
