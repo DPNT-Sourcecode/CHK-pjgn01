@@ -5,7 +5,7 @@ class TestCheckout():
         assert CheckoutSolution().checkout("") == 0
 
     def test_invalid_item(self):
-        assert CheckoutSolution().checkout('Z') == -1
+        assert CheckoutSolution().checkout('-') == -1
 
     def test_one_of_each(self):
         basket = 'ABCDE'
