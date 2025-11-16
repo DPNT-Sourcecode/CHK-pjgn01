@@ -92,15 +92,21 @@ class TestCheckout():
             ["AAAAAEEBAAABB", 455],
             ["ABCDECBAABCABBAAAEEAA", 665],
             ["HHHHH", 45],  # 5H for 45
-            ["HHHHHHHHHH", 80]  #10H for 80
+            ["HHHHHHHHHH", 80],  #10H for 80
             ["KK", 150] # 2K for 150 
             ["NMNN", 120] # 3N get one M free 
             ["PPPPP", 200] # 5P for 200
-            [ ]
+            ["QQQ", 80] # 3Q for 80 
+            ["RRQR", 150] # 3R get one Q free
+            ["UUUU", 120] # 3U get one U free 
+            ["VV", 90], # 2V for 90
+            ["VVV", 130], # 3V for 130
+
         ]
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
 
 
 
