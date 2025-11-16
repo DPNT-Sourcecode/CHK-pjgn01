@@ -19,6 +19,8 @@ class CheckoutSolution:
     def checkout(self, skus):
         if len(skus) == 0:
             return -1
+        if len(skus) == 1 and skus[0] == "":
+            return 0
         
         total = 0
         item_tally = defaultdict(int)
@@ -43,3 +45,4 @@ class CheckoutSolution:
                     item_count -= offer_min
         
         return total
+
