@@ -31,23 +31,25 @@ class CheckoutSolution:
             eligible_items_set = set(eligible_items)
             basket_items_set = set(item_tally.keys())
 
-            possible_bundle = len(eligible_items_set & basket_items_set) >= 3
+            possible_bundle = len(eligible_items_set & basket_items_set) != 0
             print("Hello", possible_bundle)
 
-            bundle_items = ""
-            for item in eligible_items:
-                if item in item_tally and item_tally[item] > 0:
-                    bundle_items += item
+            while possible_bundle: 
+                bundle_items = ""
+                for item in eligible_items:
+                    if item in item_tally and item_tally[item] > 0:
+                        bundle_items += item
 
-                if len(bundle_items) == 3:
-                    total += offer_price
+                    if len(bundle_items) == 3:
+                        total += offer_price
 
-                    for bundle_item in bundle_items:
-                        total -= price_table[bundle_item]
-                        item_tally[bundle_item] -= 1
-                    bundle_items = ""   
+                        for bundle_item in bundle_items:
+                            total -= price_table[bundle_item]
+                            item_tally[bundle_item] -= 1
+                        bundle_items = ""
 
-   
+                basket_items_set = set(item_tally.keys())
+                possible_bundle = len(eligible_items_set & basket_items_set) != 0
 
         # apply freebie offers
         for item in freebies:
@@ -80,6 +82,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
