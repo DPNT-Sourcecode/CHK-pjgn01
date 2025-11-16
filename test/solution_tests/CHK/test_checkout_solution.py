@@ -17,9 +17,9 @@ class TestCheckout():
         assert CheckoutSolution().checkout(basket) == 180
 
     def test_A_offer_2(self):
-        basket = 'AAAAA'
-        # 3A for 130 + 50
-        assert CheckoutSolution().checkout(basket) == 180
+        basket = 'AAAAAA'
+        # 5A for 200 + 50
+        assert CheckoutSolution().checkout(basket) == 250
 
     def test_B_offer_twice(self):
         basket = 'BBBB'
@@ -31,4 +31,5 @@ class TestCheckout():
         basket = basket + 'BBB' # 2B for 45+30 = 75
         basket = basket + 'CCC' # 20 * 3 = 60
         basket = basket + 'DDD' # 15 * 3 = 45
-        assert CheckoutSolution().checkout(basket) == 310
+        basket = basket + 'EEE' # 40 * 3 = 120
+        assert CheckoutSolution().checkout(basket) == 430
