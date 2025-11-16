@@ -57,10 +57,15 @@ class CheckoutSolution:
         
                 for offer_min, free_items in freebie_offers:
                     while n >= offer_min:
-                        skus = skus + free_items
+                        for free_item in free_items:
+                            if free_item in skus:
+                                total -= price_table[free_item]
+                            else:
+                                skus = skus + free_items
                         n -= offer_min
 
     
         return total
+
 
 
