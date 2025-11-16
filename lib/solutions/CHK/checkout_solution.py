@@ -25,11 +25,13 @@ class CheckoutSolution:
         if len(discounts) == 0:
             return total
         
+        print(total)
         # apply group discount offers first
         for (eligible_items, offer_price) in three_for_n_bundles:
             if len(item_tally) < 3:
                 continue
             print(item_tally)
+            print(total)
             bundle_items = ""
 
             for item in eligible_items:
@@ -38,11 +40,15 @@ class CheckoutSolution:
                     print(bundle_items)
 
                 if len(bundle_items) == 3:
+                    print(bundle_items)
                     total += offer_price
+                    print(total)
 
                     for bundle_item in bundle_items:
                         item_tally[bundle_item] -= 1
                     bundle_items = ""   
+                print(item_tally)
+                print(bundle_items)
                        
 
 
@@ -78,6 +84,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
