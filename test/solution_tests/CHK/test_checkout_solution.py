@@ -52,5 +52,16 @@ class TestCheckout():
         basket = 'ABCDEABCDE'
         assert CheckoutSolution().checkout(basket) == 280
 
-    def test_server_test_cases(self):
-        
+    def test_quick_test_cases(self):
+        # mostly from server deploy
+        test_cases = [
+            ["A", 50],
+            ["B", 30],
+            ["C", 20],
+            ["D", 15],
+            ["E", 40],
+            ["F", 10],
+        ]
+
+        for basket, expected in test_cases:
+            assert CheckoutSolution().checkout(basket) == expected
