@@ -22,5 +22,8 @@ class TestCheckout():
         assert CheckoutSolution().checkout(basket) == 90
 
     def test_3_of_everything(self):
-        basket = ['A', 'A', 'A']
-        basket.extend()
+        basket = ['A', 'A', 'A'] # 3A for 130
+        basket.extend(['B', 'B', 'B']) # 2B for 45+30 = 75
+        basket.extend(['C', 'C', 'C']) # 20 * 3 = 60
+        basket.extend(['D', 'D', 'D']) # 15 * 3 = 45
+        assert CheckoutSolution().checkout(basket) == 310
