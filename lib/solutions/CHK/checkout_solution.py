@@ -32,7 +32,7 @@ class CheckoutSolution:
         
         for item in skus:
             if item == "":
-                continue
+                return total
             if item not in price_table:
                 return -1
             

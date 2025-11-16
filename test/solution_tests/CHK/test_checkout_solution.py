@@ -41,16 +41,20 @@ class TestCheckout():
         assert CheckoutSolution().checkout(basket) == 400
 
     def test_free_items(self):
-        basket = 'EEEEBB'
+        basket = 'EEEEBB' # 40 * 4
         assert CheckoutSolution().checkout(basket) == 160
 
     def test_free_items2(self):
-        basket = 'BEBEEE'
+        basket = 'BEBEEE' # 40 * 4
         assert CheckoutSolution().checkout(basket) == 160
 
     def test_free_items3(self):
-        basket = 'ABCDEABCDE'
+        basket = 'ABCDEABCDE' # 'ABCDE' = 155, 155*2 - 30
         assert CheckoutSolution().checkout(basket) == 280
+
+    def test_buy_two_get_one_free(self):
+        basket = 'FFF'
+        assert CheckoutSolution().checkout(basket) == 20
 
     def test_quick_test_cases(self):
         # mostly from server deploy
@@ -65,8 +69,6 @@ class TestCheckout():
             ["EE", 80],
             ["EEB", 80],
             ["EEEB", 120],
-            ["EEEEBB", 160],
-            ["BEBEEE", 160],
             ["ABCDEABCDE", 280],
             ["CCADDEEBBA", 280],
             ["AAAAAEEBAAABB", 455],
@@ -75,3 +77,4 @@ class TestCheckout():
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
