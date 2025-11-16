@@ -12,24 +12,22 @@ class TestCheckout():
         assert CheckoutSolution().checkout(basket) == 155
 
     def test_A_offer_1(self):
-        basket = 'AAAA'
-        # 3A for 130 + 50
+        basket = 'AAAA'     # 3A for 130 + 50
+
         assert CheckoutSolution().checkout(basket) == 180
 
     def test_A_offer_2(self):
-        basket = 'AAAAAA'
-        # 5A for 200 + 50
+        basket = 'AAAAAA'   # 5A for 200 + 50
         assert CheckoutSolution().checkout(basket) == 250
 
     def test_A_offer_3(self):
-        basket = 'AAAAA'  # 5A for 200
+        basket = 'AAAAA'    # 5A for 200
         basket = basket + 'AAA' # 3A for 130,
         basket = basket + 'A' # 50 
         assert CheckoutSolution().checkout(basket) == 380
 
     def test_B_offer_twice(self):
-        basket = 'BBBB'
-        # (2B for 45) * 2
+        basket = 'BBBB'     # (2B for 45) * 2
         assert CheckoutSolution().checkout(basket) == 90
 
     def test_3_of_everything(self):
@@ -41,19 +39,19 @@ class TestCheckout():
         assert CheckoutSolution().checkout(basket) == 400
 
     def test_free_items(self):
-        basket = 'EEEEBB' # 40 * 4
+        basket = 'EEEEBB' # 40 * 4  (2E get one B free)
         assert CheckoutSolution().checkout(basket) == 160
 
     def test_free_items2(self):
-        basket = 'BEBEEE' # 40 * 4
+        basket = 'BEBEEE' # 40 * 4. (2E get one B free)
         assert CheckoutSolution().checkout(basket) == 160
 
-    def test_free_items3(self):
-        basket = 'ABCDEABCDE' # 'ABCDE' = 155, 155*2 - 30
+    def test_free_items3(self):     
+        basket = 'ABCDEABCDE' # 'ABCDE' = 155, 155*2 - 30   (2E get one B free)
         assert CheckoutSolution().checkout(basket) == 280
 
     def test_buy_two_get_one_free(self):
-        basket = 'FFF'
+        basket = 'FFF'  # 2F get one F free 
         assert CheckoutSolution().checkout(basket) == 20
 
     def test_quick_test_cases(self):
@@ -93,8 +91,11 @@ class TestCheckout():
             ["CCADDEEBBA", 280],
             ["AAAAAEEBAAABB", 455],
             ["ABCDECBAABCABBAAAEEAA", 665],
+            ["HHHHH", 45],  # 5H for 45
+            ["HHHHHHHHHH", 80]  #10H for 80
         ]
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
 
