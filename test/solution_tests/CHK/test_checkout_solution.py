@@ -77,4 +77,3 @@ class TestCheckout():
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
-
