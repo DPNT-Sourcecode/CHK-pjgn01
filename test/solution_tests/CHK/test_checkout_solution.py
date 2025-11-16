@@ -61,6 +61,16 @@ class TestCheckout():
             ["D", 15],
             ["E", 40],
             ["F", 10],
+            ["AAAAAAAAAA", 400],
+            ["EE", 80],
+            ["EEB", 80],
+            ["EEEB", 120],
+            ["EEEEBB", 160],
+            ["BEBEEE", 160],
+            ["ABCDEABCDE", 280],
+            ["CCADDEEBBA", 280],
+            ["AAAAAEEBAAABB", 455],
+            ["ABCDECBAABCABBAAAEEAA", 665],
         ]
 
         for basket, expected in test_cases:
