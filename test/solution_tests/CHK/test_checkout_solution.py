@@ -124,8 +124,9 @@ class TestCheckout():
 
             # 3R get one Q free
             ["RRQR", 150], 
-            ["RRQRRRQRRRQR", 450], 
-            ["RRRQQQQ", 231], # plus 3Q for 80
+            ["RRQRRRQRRRQR", 450],
+            ["RRRQQQ", 210],
+            ["RRRQQQQ", 230], # plus 3Q for 80
                      
             ["UUUU", 120], # 3U get one U free 
 
@@ -135,12 +136,11 @@ class TestCheckout():
             ["VVVV", 180], 
             ["VVVVV", 220], 
             ["VVVVVV", 260], 
-
-
         ]
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
+
 
 
 
