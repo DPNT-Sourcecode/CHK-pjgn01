@@ -44,9 +44,6 @@ class CheckoutSolution:
                             bundle_items += item
                             item_count -= 1
 
-                    if len(bundle_items) == 3:
-                        break
-
                 if len(bundle_items) == 3:    
                     total += offer_price
                     eligible_basket_items -= 3
@@ -87,6 +84,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 

@@ -119,7 +119,9 @@ class TestCheckout():
             ["XYZ", 45],
             ["XYZS", 62], # 45 + 17
             ["XYZSY", 82], # 45 + 17 + 20
-            ["XYZSYY", 90]
+            ["XYZSYY", 90], # 45 * 2
+            ["YYYYYYY", 110], # 45 * 2 + 20
+            ["YYYYYYY", 110], # 45 * 2 + 20
         ]
 
         for basket, expected in test_cases:
