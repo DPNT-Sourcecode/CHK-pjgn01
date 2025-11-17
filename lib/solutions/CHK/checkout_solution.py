@@ -27,7 +27,7 @@ class CheckoutSolution:
         for (eligible_items, offer_price) in three_for_n_bundles:
             if len(skus) < 3:
                 continue
-
+            print(skus)
             eligible_items = sorted(eligible_items, key=lambda x: price_table[x], reverse=True)
             eligible_basket_items = 0
             for item in eligible_items:
@@ -38,20 +38,20 @@ class CheckoutSolution:
                 for item in eligible_items:
                     if item in item_tally and item_tally[item] > 0:
                         bundle_items += item
+                        eligible_basket_items -= 1
 
                     if len(bundle_items) == 3:
                         break
 
                 if len(bundle_items) == 3:    
+                    print(bundle_items)
                     total += offer_price
 
                     for bundle_item in bundle_items:
                         total -= price_table[bundle_item]
                         item_tally[bundle_item] -= 1
+
                     
-                    bundle_items = ""
-                    eligible_basket_items -= 3
-                    print(eligible_basket_items)
                     
 
                 
@@ -87,3 +87,4 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
