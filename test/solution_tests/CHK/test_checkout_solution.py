@@ -117,10 +117,10 @@ class TestCheckout():
             ["STY", 45],
             ["STZ", 45],
             ["XYZ", 45],
-            ["XYZS", 62],
+            ["XYZS", 62], # 45 + 17
+            ["XYZSY", 82], # 45 + 17 + 20
+            ["XYZSYY", 90]
         ]
 
         for basket, expected in test_cases:
             assert CheckoutSolution().checkout(basket) == expected
-
-
