@@ -39,23 +39,22 @@ class CheckoutSolution:
                 for item in eligible_items:
                     if item in item_tally:
                         item_count = item_tally[item]
-                        while item_count > 0:
+
+                        while item_count > 0 and len(bundle_items) < 3:
                             bundle_items += item
-                            eligible_basket_items -= 1
                             item_count -= 1
 
-                            if len(bundle_items) == 3:
-                                break
-
-                    
+                    if len(bundle_items) == 3:
+                        break
 
                 if len(bundle_items) == 3:    
-                    print(bundle_items)
                     total += offer_price
+                    eligible_basket_items -= 3
 
                     for bundle_item in bundle_items:
                         total -= price_table[bundle_item]
                         item_tally[bundle_item] -= 1
+
 
         # apply freebie offers
         for item in freebies:
@@ -88,6 +87,7 @@ class CheckoutSolution:
                     item_count -= offer_min
     
         return total
+
 
 
 
